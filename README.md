@@ -1,4 +1,4 @@
-# Personal-Webpage-2
+# personal-webpage-2
 Small personal webpage built using the Next.js framework, configured to use app-router and TypeScript.
 This web app is configure to be deployed as static pages on github pages.
 
