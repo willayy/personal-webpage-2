@@ -1,4 +1,4 @@
-# Copilot Instructions for Personal-Webpage-2
+# Copilot Instructions for personal-webpage-2
 
 ## Project Overview
 
