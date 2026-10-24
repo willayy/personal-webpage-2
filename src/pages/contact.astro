@@ -1,0 +1,18 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { translateByKey } from '@/utils/localization';
+
+const pageTitle = translateByKey('en', 'header.contact', null);
+const mailLabel = translateByKey('en', 'contact.mail', null);
+---
+
+<Layout title={`${pageTitle} - William Norland`}>
+  <main>
+    <div class="listBox roboto-regular">
+      <h3>{mailLabel}</h3>
+      <a href="mailto:williamnorland@gmail.com">
+        williamnorland@gmail.com
+      </a>
+    </div>
+  </main>
+</Layout>
