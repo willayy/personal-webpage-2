@@ -1,29 +1,34 @@
-import styles from './EducationListItem.module.css';
-import '@/app/globals.css'
+'use client';
 
-// Define the props interface
+import styles from './EducationListItem.module.css';
+import '@/app/globals.css';
+import { useTranslation } from '@/hooks/useTranslation';
+
 interface EducationListItemProps {
-    school: string;
-    degree: string;
-    graduation: string;
+  school: string;
+  degree: string;
+  graduation: string;
 }
 
-const listItem = 'listItem'
+const listItem = 'listItem';
 
-export default function ProjectListItem({school, degree, graduation}: Readonly<EducationListItemProps>, key: Readonly<number>) {
+export default function EducationListItem({
+  school,
+  degree,
+  graduation,
+}: Readonly<EducationListItemProps>) {
+  const { t } = useTranslation();
+  const graduationLabel = t('education.graduation', null);
 
-    return (
+  return (
+    <li className={listItem}>
+      <h2>{school}</h2>
 
-        <li key={key} className={listItem}>
+      <p className={styles.degree}> {degree} </p>
 
-            <h2>{school}</h2>
-
-            <p className={styles.degree}> {degree} </p>
-
-            <p><strong>Graduation:</strong> {graduation} </p>
-
-        </li>
-
-    );
-
+      <p>
+        <strong>{graduationLabel}</strong> {graduation}{' '}
+      </p>
+    </li>
+  );
 }
