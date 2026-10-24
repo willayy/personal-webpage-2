@@ -1,49 +1,67 @@
+'use client';
+
 import { formatDate } from '@/utils/dates';
-import '@/app/globals.css'
+import '@/app/globals.css';
+import { useTranslation } from '@/hooks/useTranslation';
 
-
-// Define the props interface
 interface ProjectListItemProps {
-    title: string;
-    description: string;
-    link: string;
-    topics: string[];
-    created: string;
-    lastUpdated: string;
+  title: string;
+  description: string;
+  link: string;
+  topics: string[];
+  created: string;
+  lastUpdated: string;
 }
 
-const listItem = 'listItem'
+const listItem = 'listItem';
+const topicList = 'topicList';
+const topicStyle = 'topic';
 
-const topicList = 'topicList'
+export default function ProjectListItem({
+  title,
+  description,
+  link,
+  topics,
+  created,
+  lastUpdated,
+}: Readonly<ProjectListItemProps>) {
+  const { t } = useTranslation();
+  const formattedCreated = formatDate(created);
+  const formattedUpdated = formatDate(lastUpdated);
+  const linkText = t('projects.linkToProject', null);
+  const createdLabel = t('projects.created', null);
+  const updatedLabel = t('projects.lastUpdated', null);
+  const topicsLabel = t('projects.topics', null);
 
-const topicStyle = 'topic'
+  return (
+    <li className={listItem}>
+      <h2>{title}</h2>
 
-export default function ProjectListItem({title, description, link, topics, created, lastUpdated}: Readonly<ProjectListItemProps>, key: Readonly<number>) {
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        {linkText}
+      </a>
 
-    return (
+      <p>{description}</p>
 
-        <li key={key} className={listItem}>
+      <p>
+        <strong>{createdLabel}</strong> {formattedCreated}
+      </p>
 
-            <h2>{title}</h2>
+      <p>
+        <strong>{updatedLabel}</strong> {formattedUpdated}
+      </p>
 
-            <a href={link} target="_blank" rel="noopener noreferrer">Link to project</a>
+      <p>
+        <strong>{topicsLabel}</strong>
+      </p>
 
-            <p>{description}</p>
-
-            <p><strong>Created:</strong> {formatDate(created)}</p>
-
-            <p><strong>Last updated:</strong> {formatDate(lastUpdated)}</p>
-
-            <p><strong>Topics:</strong></p>
-
-            <ul className={topicList}>
-                {topics.map((topic) => (
-                    <li key={topic} className={topicStyle}>{topic}</li>
-                ))}
-            </ul>
-        
-        </li>
-
-    );
-
+      <ul className={topicList}>
+        {topics.map((topic) => (
+          <li key={topic} className={topicStyle}>
+            {topic}
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
 }
