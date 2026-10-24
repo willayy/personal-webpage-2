@@ -2,8 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import List from '@/components/List.astro';
 import EmploymentListItem from '@/components/EmploymentListItem.astro';
-import employmentsDataRaw from '@/data/employments.json';
-import { translateByKey } from '@/utils/localization';
+import { translateByKey, extractDataByKey } from '@/utils/localization';
 
 interface EmploymentItem {
   id: number;
@@ -14,8 +13,8 @@ interface EmploymentItem {
   description: string;
 }
 
-const employmentList: EmploymentItem[] = employmentsDataRaw.employments;
 const pageTitle = translateByKey('en', 'career.title', null);
+const employmentList = extractDataByKey<EmploymentItem[]>('en', 'career.items');
 ---
 
 <Layout title={`${pageTitle} - William Norland`}>
