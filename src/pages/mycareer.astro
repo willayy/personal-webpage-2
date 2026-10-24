@@ -1,0 +1,39 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import List from '@/components/List.astro';
+import EmploymentListItem from '@/components/EmploymentListItem.astro';
+import employmentsDataRaw from '@/data/employments.json';
+import { translateByKey } from '@/utils/localization';
+
+interface EmploymentItem {
+  id: number;
+  position: string;
+  organization: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
+
+const employmentList: EmploymentItem[] = employmentsDataRaw.employments;
+const pageTitle = translateByKey('en', 'career.title', null);
+---
+
+<Layout title={`${pageTitle} - William Norland`}>
+  <main>
+    <div class="listBox roboto-regular">
+      <h1>{pageTitle}</h1>
+
+      <List>
+        {employmentList.map((item) => (
+          <EmploymentListItem
+            position={item.position}
+            organization={item.organization}
+            startDate={item.startDate}
+            endDate={item.endDate}
+            description={item.description}
+          />
+        ))}
+      </List>
+    </div>
+  </main>
+</Layout>
