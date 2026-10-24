@@ -17,7 +17,42 @@
   "about": {
     "title": "William Norland",
     "skillsTitle": "Skills",
-    "secondarySkillsTitle": "Secondary Skills"
+    "secondarySkillsTitle": "Secondary Skills",
+    "introduction": "My greatest passion is to learn and to solve: understanding how things work, why they exist, and how to build solutions from first principles. My background spans software engineering, machine learning, and data science, with a focus on breaking down complex problems and designing reliable, scalable systems.",
+    "skillSummary": "With a B.Sc. in Software Engineering and an M.Sc. in Data Science & AI from Chalmers University of Technology, supplemented by research in agentic AI at the University of Tokyo (LISD Lab), I possess a solid foundation in both production software architecture and the mathematical principles of machine learning. My experience spans machine learning engineering in industry—designing recommendation algorithms, generative models, and full-stack systems—as well as teaching object-oriented programming.",
+    "primarySkills": [
+      "Data Science",
+      "Data Engineering",
+      "Machine Learning",
+      "Agentic AI",
+      "Software Engineering"
+    ],
+    "secondarySkills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "NumPy",
+      "Pandas",
+      "FastAPI",
+      "Flask",
+      "SQLAlchemy",
+      "Pydantic",
+      "Matplotlib",
+      "Gymnasium",
+      "Java",
+      "Spring",
+      "LangChain4j",
+      "C/C++",
+      "CMake",
+      "Haskell",
+      "SQL (PostgreSQL)",
+      "JavaScript/TypeScript",
+      "React",
+      "Docker",
+      "Git",
+      "Linux"
+    ]
   },
   "projects": {
     "title": "Projects",
@@ -52,11 +87,71 @@
   },
   "education": {
     "title": "Education",
-    "graduation": "Graduation:"
+    "graduation": "Graduation:",
+    "items": [
+      {
+        "id": 1,
+        "school": "Polhemsgymnasiet (High School)",
+        "degree": "High School Diploma in Science",
+        "graduation": "June 2020"
+      },
+      {
+        "id": 2,
+        "school": "Chalmers University of Technology",
+        "degree": "B.Sc. in Software Engineering",
+        "graduation": "June 2025"
+      },
+      {
+        "id": 3,
+        "school": "University of Tokyo (GSFS -- LISD Lab)",
+        "degree": "Special Auditing Student",
+        "graduation": "August 2026"
+      },
+      {
+        "id": 4,
+        "school": "Chalmers University of Technology",
+        "degree": "M.Sc. in Data Science & AI",
+        "graduation": "June 2027"
+      }
+    ]
   },
   "career": {
     "title": "Career",
-    "fromTo": "From-To:"
+    "fromTo": "From-To:",
+    "items": [
+      {
+        "id": 4,
+        "position": "Machine learning engineer",
+        "organization": "Weon",
+        "startDate": "January 2025",
+        "endDate": "Current",
+        "description": "Primarily working as a part-time Machine learning engineer in combination with my studies at CTH but have been in contact with many technical aspects of Weon such as:\n- Size recommendation algorithms.\n- 3D measurement systems.\n- Data collection.\n- Generative Image models.\n- Frontend web design.\n- Backend logic and Databases.\n- API servers."
+      },
+      {
+        "id": 3,
+        "position": "Teaching assistant",
+        "organization": "Chalmers",
+        "startDate": "October 2024",
+        "endDate": "March 2025",
+        "description": "Teaching assistant in two courses (TDA553, TDA367) about Object Oriented Programming (OOP), one teaching the basics of OOP using Java, and one where students formed groups to produce a Java project over the span of half a semester."
+      },
+      {
+        "id": 2,
+        "position": "Client services manager",
+        "organization": "SEB",
+        "startDate": "May 2023",
+        "endDate": "August 2023",
+        "description": "Worked primarily with letters of credit and collections. I also developed a tool in Python to digitize a large backlog with paper documents, which also could extract key numbers from them and export them to Excel. The tool used Tesseract (an OCR software) and a simple GUI built with TKinter."
+      },
+      {
+        "id": 1,
+        "position": "Soldier",
+        "organization": "4th Amphibious regiment, Swedish armed forces",
+        "startDate": "July 2020",
+        "endDate": "July 2022",
+        "description": "Worked as an anti-ship soldier in the “bekämpningskompaniet” unit and also as a sonar operator in an anti-submarine group, first as a conscript but also as an employed soldier for a year after the conscription ended. During my time at Amf4, I was also responsible for the platoon's physical training."
+      }
+    ]
   },
   "cv": {
     "title": "Curriculum Vitae",
