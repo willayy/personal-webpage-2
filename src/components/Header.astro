@@ -23,51 +23,51 @@ const contactText = translateByKey('en', 'header.contact', null);
 <header class="header">
   <nav class="nav">
     <ul class="headerUl roboto-bold">
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/`} class="link">
-          <FaUser className="icon" />
+          <FaUser class="icon" />
           <span>{aboutText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/projects`} class="link">
-          <FaProjectDiagram className="icon" />
+          <FaProjectDiagram class="icon" />
           <span>{projectsText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/contributions`} class="link">
-          <FaCodeBranch className="icon" />
+          <FaCodeBranch class="icon" />
           <span>{contributionsText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/cv`} class="link">
-          <FaFileAlt className="icon" />
+          <FaFileAlt class="icon" />
           <span>{cvText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/education`} class="link">
-          <FaGraduationCap className="icon" />
+          <FaGraduationCap class="icon" />
           <span>{educationText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/mycareer`} class="link">
-          <FaBriefcase className="icon" />
+          <FaBriefcase class="icon" />
           <span>{careerText}</span>
         </a>
       </li>
 
-      <li class="listItem">
+      <li class="navItem">
         <a href={`${baseUrl}/contact`} class="link">
-          <FaEnvelope className="icon" />
+          <FaEnvelope class="icon" />
           <span>{contactText}</span>
         </a>
       </li>
@@ -105,18 +105,28 @@ const contactText = translateByKey('en', 'header.contact', null);
     gap: 15px;
   }
 
-  .listItem {
+  .navItem {
     color: white;
     transition: all 0.3s ease;
     position: relative;
+    list-style: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
   }
 
-  .listItem:hover {
+  .navItem:hover {
     color: var(--color-primary);
     transform: scale(1.15);
   }
 
-  .listItem::after {
+  .navItem:hover .link {
+    color: var(--color-primary);
+  }
+
+  .navItem::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -127,7 +137,7 @@ const contactText = translateByKey('en', 'header.contact', null);
     transition: width 0.3s ease;
   }
 
-  .listItem:hover::after {
+  .navItem:hover::after {
     width: 100%;
   }
 
@@ -139,6 +149,7 @@ const contactText = translateByKey('en', 'header.contact', null);
     align-items: center;
     gap: 4px;
     padding: 5px 10px;
+    transition: color 0.3s ease;
   }
 
   :global(.icon) {
