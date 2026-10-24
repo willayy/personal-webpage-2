@@ -1,33 +1,40 @@
-import styles from './EmploymentListItem.module.css';
-import '@/app/globals.css'
+'use client';
 
-// Define the props interface
+import styles from './EmploymentListItem.module.css';
+import '@/app/globals.css';
+import { useTranslation } from '@/hooks/useTranslation';
+
 interface EmploymentListItemProps {
-    position: string;
-    organization: string;
-    startDate: string;
-    endDate: string;
-    description: string;
+  position: string;
+  organization: string;
+  startDate: string;
+  endDate: string;
+  description: string;
 }
 
-const listItem = 'listItem'
+const listItem = 'listItem';
 
-export default function ProjectListItem({position, organization, startDate, endDate, description}: Readonly<EmploymentListItemProps>, key: Readonly<number>) {
+export default function EmploymentListItem({
+  position,
+  organization,
+  startDate,
+  endDate,
+  description,
+}: Readonly<EmploymentListItemProps>) {
+  const { t } = useTranslation();
+  const fromToLabel = t('career.fromTo', null);
 
-    return (
+  return (
+    <li className={listItem}>
+      <h2>{position}</h2>
 
-        <li key={key} className={listItem}>
+      <p className={styles.organization}> {organization} </p>
 
-            <h2>{position}</h2>
+      <p className={styles.text}>{description}</p>
 
-            <p className={styles.organization}> {organization} </p>
-
-            <text className={styles.text}>{description}</text>
-
-            <p><strong>From-To:</strong> {startDate} - {endDate} </p>
-
-        </li>
-
-    );
-
+      <p>
+        <strong>{fromToLabel}</strong> {startDate} - {endDate}{' '}
+      </p>
+    </li>
+  );
 }
