@@ -1,0 +1,27 @@
+---
+import { translateByKey } from '@/utils/localization';
+
+interface Props {
+  school: string;
+  degree: string;
+  graduation: string;
+}
+
+const { school, degree, graduation } = Astro.props;
+const graduationLabel = translateByKey('en', 'education.graduation', null);
+---
+
+<li class="listItem">
+  <h2>{school}</h2>
+  <p class="degree">{degree}</p>
+  <p><strong>{graduationLabel}</strong> {graduation}</p>
+</li>
+
+<style>
+  .degree {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin: 5px 0;
+  }
+</style>
