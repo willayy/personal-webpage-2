@@ -1,19 +1,21 @@
-import Link from 'next/link'
- 
+'use client';
+
+import Link from 'next/link';
+import { useTranslation } from '@/hooks/useTranslation';
+
 export default function NotFound() {
+  const { t } = useTranslation();
+  const title = t('notFound.title', null);
+  const message = t('notFound.message', null);
+  const returnHome = t('notFound.returnHome', null);
 
   return (
+    <div className="error-div roboto-regular">
+      <h2>{title}</h2>
 
-    <div className='error-div roboto-regular'>
+      <p>{message}</p>
 
-      <h2>Not Found</h2>
-
-      <p>Could not find requested resource</p>
-
-      <Link href="/">Return to About</Link>
-
+      <Link href="/">{returnHome}</Link>
     </div>
-
-  )
-  
+  );
 }
