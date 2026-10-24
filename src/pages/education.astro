@@ -2,8 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import List from '@/components/List.astro';
 import EducationListItem from '@/components/EducationListItem.astro';
-import educationDataRaw from '@/data/education.json';
-import { translateByKey } from '@/utils/localization';
+import { translateByKey, extractDataByKey } from '@/utils/localization';
 
 interface EducationItem {
   id: number;
@@ -12,8 +11,8 @@ interface EducationItem {
   graduation: string;
 }
 
-const educationList: EducationItem[] = educationDataRaw;
 const pageTitle = translateByKey('en', 'education.title', null);
+const educationList = extractDataByKey<EducationItem[]>('en', 'education.items');
 ---
 
 <Layout title={`${pageTitle} - William Norland`}>
