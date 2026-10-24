@@ -59,3 +59,16 @@ export function translateByKey(
   const formatted = formatTemplateWithParams(template, params);
   return formatted;
 }
+
+export function extractDataByKey<T>(
+  language: Language,
+  keyPath: string
+): T {
+  const dictionary = dictionaries[language];
+  const segments = keyPath.split('.');
+  let current: unknown = dictionary;
+  for (const segment of segments) {
+    current = retrieveNestedValue(current, segment);
+  }
+  return current as T;
+}
