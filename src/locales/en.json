@@ -3,6 +3,7 @@
     "about": "About",
     "projects": "Projects",
     "contributions": "Contributions",
+    "cv": "CV",
     "education": "Education",
     "career": "Career",
     "contact": "Contact",
@@ -56,6 +57,12 @@
   "career": {
     "title": "Career",
     "fromTo": "From-To:"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "Download or view my latest curriculum vitae directly from GitHub releases.",
+    "download": "Download CV (PDF)",
+    "viewReleases": "View Releases on GitHub"
   },
   "contact": {
     "mail": "Mail"
