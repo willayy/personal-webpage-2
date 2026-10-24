@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ContributionsFilter from '@/components/ContributionsFilter';
+import { fetchContributedRepos, ContributedRepo } from '@/api/github-api';
+import { translateByKey } from '@/utils/localization';
+
+const data: ContributedRepo[] = await fetchContributedRepos();
+const defaultLink = 'https://github.com/willayy/';
+const githubUserLink = process.env.GITHUB_USER_LINK || defaultLink;
+
+const pageTitle = translateByKey('en', 'contributions.title', null);
+const descriptionText = translateByKey('en', 'contributions.description', null);
+const githubLinkText = translateByKey('en', 'contributions.githubLinkText', null);
+---
+
+<Layout title={`${pageTitle} - William Norland`}>
+  <main>
+    <div class="listBox roboto-regular">
+      <h1>{pageTitle}</h1>
+      <p>{descriptionText}</p>
+      <a href={githubUserLink} target="_blank" rel="noopener noreferrer">
+        {githubLinkText}
+      </a>
+      <ContributionsFilter client:load data={data} />
+    </div>
+  </main>
+</Layout>
