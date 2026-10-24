@@ -20,15 +20,15 @@
             "id": 2,
             "position": "Client services manager",
             "organization": "SEB",
-            "startDate": "June 2023",
-            "endDate": "August 2024",
+            "startDate": "May 2023",
+            "endDate": "August 2023",
             "description": "Worked primarily with letters of credit and collections. I also developed a tool in Python to digitize a large backlog with paper documents, which also could extract key numbers from them and export them to Excel. The tool used Tesseract (an OCR software) and a simple GUI built with TKinter."
         },
         {
             "id": 1,
             "position": "Soldier",
             "organization": "4th Amphibious regiment, Swedish armed forces",
-            "startDate": "August 2020",
+            "startDate": "July 2020",
             "endDate": "July 2022",
             "description": "Worked as an anti-ship soldier in the “bekämpningskompaniet” unit and also as a sonar operator in an anti-submarine group, first as a conscript but also as an employed soldier for a year after the conscription ended. During my time at Amf4, I was also responsible for the platoon's physical training."
         }
