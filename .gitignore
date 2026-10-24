@@ -40,3 +40,7 @@ next-env.d.ts
 
 # MacOS
 .DS_Store
+
+# astro
+.astro/
+dist/
