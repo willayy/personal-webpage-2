@@ -1,0 +1,92 @@
+---
+import { translateByKey } from '@/utils/localization';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const linkedinUrl = `${baseUrl}/images/LinkedIn-Blue.png`;
+const githubUrl = `${baseUrl}/images/github-mark-white.png`;
+const copyrightText = translateByKey('en', 'footer.copyright', null);
+const linkedinAlt = translateByKey('en', 'footer.linkedinAlt', null);
+const githubAlt = translateByKey('en', 'footer.githubAlt', null);
+---
+
+<div class="footerContainer">
+  <footer class="footer">
+    <div class="copyrightBox">
+      <p class="roboto-regular">{copyrightText}</p>
+    </div>
+
+    <div class="socialsBox">
+      <a
+        href="https://www.linkedin.com/in/william-norland-69475b263/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img class="img" src={linkedinUrl} alt={linkedinAlt} width="112" height="28" />
+      </a>
+
+      <a href="https://github.com/willayy" target="_blank" rel="noreferrer">
+        <img class="img" src={githubUrl} alt={githubAlt} width="50" height="50" />
+      </a>
+    </div>
+  </footer>
+</div>
+
+<style>
+  .footer {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-dark);
+    padding: 20px;
+    height: 10vh;
+    min-height: 80px;
+  }
+
+  .footerContainer {
+    margin-top: 40px;
+  }
+
+  .img {
+    transition: transform 0.3s ease;
+  }
+
+  .img:hover {
+    transform: scale(1.1);
+  }
+
+  .socialsBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+    width: 100%;
+    gap: 40px;
+  }
+
+  .copyrightBox {
+    display: flex;
+    color: white;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+      gap: 15px;
+    }
+
+    .copyrightBox,
+    .socialsBox {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .socialsBox {
+      gap: 20px;
+    }
+  }
+</style>
