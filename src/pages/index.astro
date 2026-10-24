@@ -1,19 +1,17 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import skillsDataRaw from '@/data/skills.json';
-import { translateByKey } from '@/utils/localization';
+import { translateByKey, extractDataByKey } from '@/utils/localization';
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 const profileImageUrl = `${baseUrl}/images/profile.jpg`;
 
-const introductionText: string = skillsDataRaw.introduction;
-const skillSummaryText: string = skillsDataRaw.skillSummary;
-const primarySkills: string[] = skillsDataRaw.primarySkills;
-const secondarySkills: string[] = skillsDataRaw.secondarySkills;
-
 const nameTitle = translateByKey('en', 'about.title', null);
 const skillsTitle = translateByKey('en', 'about.skillsTitle', null);
 const secondaryTitle = translateByKey('en', 'about.secondarySkillsTitle', null);
+const introductionText = translateByKey('en', 'about.introduction', null);
+const skillSummaryText = translateByKey('en', 'about.skillSummary', null);
+const primarySkills = extractDataByKey<string[]>('en', 'about.primarySkills');
+const secondarySkills = extractDataByKey<string[]>('en', 'about.secondarySkills');
 ---
 
 <Layout title={`${nameTitle} - About`}>
