@@ -1,0 +1,92 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { fetchLatestCvUrl } from '@/api/github-api';
+import { translateByKey } from '@/utils/localization';
+import { FaExternalLinkAlt, FaFilePdf } from 'react-icons/fa';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const localCvUrl = `${baseUrl}/cv.pdf`;
+const latestReleaseUrl = await fetchLatestCvUrl();
+const isDirectPdf = latestReleaseUrl.endsWith('.pdf');
+const downloadTarget = isDirectPdf ? latestReleaseUrl : localCvUrl;
+
+const pageTitle = translateByKey('en', 'cv.title', null);
+const descriptionText = translateByKey('en', 'cv.description', null);
+const downloadText = translateByKey('en', 'cv.download', null);
+const viewReleasesText = translateByKey('en', 'cv.viewReleases', null);
+const releasesUrl = 'https://github.com/willayy/curriculum-vitae/releases';
+---
+
+<Layout title={`${pageTitle} - William Norland`}>
+  <main>
+    <div class="listBox roboto-regular">
+      <h1>{pageTitle}</h1>
+      <p>{descriptionText}</p>
+
+      <div class="actionContainer">
+        <a
+          href={downloadTarget}
+          class="downloadButton"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFilePdf className="icon" />
+          <span>{downloadText}</span>
+        </a>
+
+        <a
+          href={releasesUrl}
+          class="releaseLink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaExternalLinkAlt className="icon" />
+          <span>{viewReleasesText}</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .actionContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .downloadButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .downloadButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .releaseLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 16px;
+  }
+
+  .releaseLink:hover {
+    text-decoration: underline;
+  }
+</style>
