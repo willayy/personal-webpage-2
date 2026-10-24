@@ -1,11 +1,16 @@
-import styles from './Footer.module.css'
-import Image from 'next/image'
+'use client';
+
+import styles from './Footer.module.css';
+import Image from 'next/image';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function Footer() {
-
-    const githubUrl = process.env.NEXT_PUBLIC_GITHUB_IMAGE_URL ?? "N/A"
-
-    const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_IMAGE_URL ?? "N/A"
+    const { t } = useTranslation();
+    const githubUrl = process.env.NEXT_PUBLIC_GITHUB_IMAGE_URL ?? "N/A";
+    const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_IMAGE_URL ?? "N/A";
+    const copyrightText = t('footer.copyright', null);
+    const linkedinAlt = t('footer.linkedinAlt', null);
+    const githubAlt = t('footer.githubAlt', null);
 
     return (
 
@@ -15,21 +20,37 @@ export default function Footer() {
 
             <div className={styles.copyrightBox}>
 
-                <p className={"roboto-regular"}> 2024 William Norland </p>
+                <p className={"roboto-regular"}> {copyrightText} </p>
                 
             </div>
 
             <div className={styles.socialsBox}>
 
-                <a href="https://www.linkedin.com/in/william-norland-69475b263/" target="_blank" rel="noreferrer">
+                <a
+                    href="https://www.linkedin.com/in/william-norland-69475b263/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
 
-                    <Image className={styles.img} src={linkedinUrl} alt="LinkedIn" width={112} height={28}/>
+                    <Image
+                        className={styles.img}
+                        src={linkedinUrl}
+                        alt={linkedinAlt}
+                        width={112}
+                        height={28}
+                    />
 
                 </a>
 
                 <a href="https://github.com/willayy" target="_blank" rel="noreferrer">
 
-                    <Image className={styles.img} src={githubUrl} alt="Github" width={50} height={50}/>
+                    <Image
+                        className={styles.img}
+                        src={githubUrl}
+                        alt={githubAlt}
+                        width={50}
+                        height={50}
+                    />
 
                 </a>
 
