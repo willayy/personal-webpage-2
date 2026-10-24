@@ -17,18 +17,53 @@
   "about": {
     "title": "William Norland",
     "skillsTitle": "Färdigheter",
-    "secondarySkillsTitle": "Sekundära färdigheter"
+    "secondarySkillsTitle": "Sekundära färdigheter",
+    "introduction": "Min största passion är att lära och lösa: förstå hur saker fungerar, varför de finns och hur man bygger lösningar från grundprinciper. Min bakgrund spänner över mjukvaruutveckling, maskininlärning och datavetenskap, med fokus på att bryta ner komplexa problem och designa pålitliga, skalbara system.",
+    "skillSummary": "Med en kandidatexamen i Software Engineering och en masterexamen i Data Science & AI från Chalmers tekniska högskola, kompletterat med forskning inom agentisk AI vid Tokyos universitet (LISD Lab), har jag en stark grund i både mjukvaruarkitektur och de matematiska principerna för maskininlärning. Min erfarenhet omfattar maskininlärningsingenjörsarbete inom industrin—design av rekommendationsalgoritmer, generativa modeller och fullstacksystem—samt undervisning i objektorienterad programmering.",
+    "primarySkills": [
+      "Datavetenskap",
+      "Data Engineering",
+      "Maskininlärning",
+      "Agentisk AI",
+      "Mjukvaruutveckling"
+    ],
+    "secondarySkills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "NumPy",
+      "Pandas",
+      "FastAPI",
+      "Flask",
+      "SQLAlchemy",
+      "Pydantic",
+      "Matplotlib",
+      "Gymnasium",
+      "Java",
+      "Spring",
+      "LangChain4j",
+      "C/C++",
+      "CMake",
+      "Haskell",
+      "SQL (PostgreSQL)",
+      "JavaScript/TypeScript",
+      "React",
+      "Docker",
+      "Git",
+      "Linux"
+    ]
   },
   "projects": {
     "title": "Projekt",
-    "description": "Här är en lista över projekt jag har arbetat med, för en fullständig vy av min GitHub besök ",
+    "description": "Här är en lista över projekt jag har arbetat med, för en fullständig översikt över min GitHub, besök ",
     "githubLinkText": "Min GitHub",
     "searchPlaceholder": "Sök projekt efter namn, beskrivning eller ämne...",
     "searchAriaLabel": "Sök projekt efter namn, beskrivning eller ämne",
     "filterLabel": "Skolprojekt:",
     "filterAll": "Alla",
     "filterSchool": "Skola",
-    "filterPersonal": "Egna projekt",
+    "filterPersonal": "Personliga projekt",
     "showingResults": "Visar {count} av {total} projekt",
     "linkToProject": "Länk till projekt",
     "created": "Skapad:",
@@ -37,7 +72,7 @@
   },
   "contributions": {
     "title": "Bidrag",
-    "description": "Här är en lista över publika arkiv ägda av andra som jag har bidragit till. För en fullständig vy av min GitHub besök ",
+    "description": "Här är en lista över publika kodbaser ägda av andra som jag har bidragit till. För en fullständig översikt över min GitHub, besök ",
     "githubLinkText": "Min GitHub",
     "searchPlaceholder": "Sök bidrag efter namn, beskrivning eller ämne...",
     "searchAriaLabel": "Sök bidrag efter namn, beskrivning eller ämne",
@@ -52,11 +87,71 @@
   },
   "education": {
     "title": "Utbildning",
-    "graduation": "Examen:"
+    "graduation": "Examen:",
+    "items": [
+      {
+        "id": 1,
+        "school": "Polhemsgymnasiet",
+        "degree": "Gymnasieexamen i Naturvetenskap",
+        "graduation": "Juni 2020"
+      },
+      {
+        "id": 2,
+        "school": "Chalmers tekniska högskola",
+        "degree": "Kandidatexamen i Software Engineering",
+        "graduation": "Juni 2025"
+      },
+      {
+        "id": 3,
+        "school": "Tokyos universitet (GSFS -- LISD Lab)",
+        "degree": "Special Auditing Student",
+        "graduation": "Augusti 2026"
+      },
+      {
+        "id": 4,
+        "school": "Chalmers tekniska högskola",
+        "degree": "Masterexamen i Data Science & AI",
+        "graduation": "Juni 2027"
+      }
+    ]
   },
   "career": {
     "title": "Karriär",
-    "fromTo": "Från-Till:"
+    "fromTo": "Från-Till:",
+    "items": [
+      {
+        "id": 4,
+        "position": "Maskininlärningsingenjör",
+        "organization": "Weon",
+        "startDate": "Januari 2025",
+        "endDate": "Nuvarande",
+        "description": "Arbetar främst som deltidsanställd maskininlärningsingenjör parallellt med mina studier på Chalmers och har arbetat med många tekniska delar av Weon, såsom:\n- Storleksrekommendationsalgoritmer.\n- 3D-mätsystem.\n- Datainsamling.\n- Generativa bildmodeller.\n- Webdesign för frontend.\n- Backendlogik och databaser.\n- API-servrar."
+      },
+      {
+        "id": 3,
+        "position": "Lärarassistent",
+        "organization": "Chalmers",
+        "startDate": "Oktober 2024",
+        "endDate": "Mars 2025",
+        "description": "Lärarassistent i två kurser (TDA553, TDA367) om objektorienterad programmering (OOP) i Java; en som lärde ut grunderna i OOP och en där studenter i grupper utvecklade ett Javaprojekt under en halv termin."
+      },
+      {
+        "id": 2,
+        "position": "Client services manager",
+        "organization": "SEB",
+        "startDate": "Maj 2023",
+        "endDate": "Augusti 2023",
+        "description": "Arbetade främst med remburser och inkasso. Utvecklade även ett verktyg i Python för att digitalisera en stor backlog av pappersdokument, extrahera nyckeltal och exportera dem till Excel med hjälp av Tesseract OCR och ett enkelt GUI i Tkinter."
+      },
+      {
+        "id": 1,
+        "position": "Soldat",
+        "organization": "Amf 4, Försvarsmakten",
+        "startDate": "Juli 2020",
+        "endDate": "Juli 2022",
+        "description": "Arbetade som amfibiesoldat i bekämpningskompaniet och som hydrofonoperatör i en ubåtsjaktgrupp, först som värnpliktig och sedan som anställd soldat under ett år. Var även ansvarig för plutonens fysiska träning."
+      }
+    ]
   },
   "cv": {
     "title": "Curriculum Vitae",
@@ -74,6 +169,6 @@
   "notFound": {
     "title": "Hittades inte",
     "message": "Kunde inte hitta den begärda resursen",
-    "returnHome": "Återvänd hem"
+    "returnHome": "Tillbaka till startsidan"
   }
 }
