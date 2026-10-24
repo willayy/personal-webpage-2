@@ -1,0 +1,72 @@
+{
+  "header": {
+    "about": "Om mig",
+    "projects": "Projekt",
+    "contributions": "Bidrag",
+    "education": "Utbildning",
+    "career": "Karriär",
+    "contact": "Kontakt",
+    "languageToggle": "EN"
+  },
+  "footer": {
+    "copyright": "2024 William Norland",
+    "linkedinAlt": "LinkedIn",
+    "githubAlt": "Github"
+  },
+  "about": {
+    "title": "William Norland",
+    "skillsTitle": "Färdigheter",
+    "secondarySkillsTitle": "Sekundära färdigheter"
+  },
+  "projects": {
+    "title": "Projekt",
+    "description": "Här är en lista över projekt jag har arbetat med, för en fullständig vy av min GitHub besök ",
+    "githubLinkText": "Min GitHub",
+    "searchPlaceholder": "Sök projekt efter namn, beskrivning eller ämne...",
+    "searchAriaLabel": "Sök projekt efter namn, beskrivning eller ämne",
+    "filterLabel": "Skolprojekt:",
+    "filterAll": "Alla",
+    "filterSchool": "Skola",
+    "filterPersonal": "Egna projekt",
+    "showingResults": "Visar {count} av {total} projekt",
+    "linkToProject": "Länk till projekt",
+    "created": "Skapad:",
+    "lastUpdated": "Senast uppdaterad:",
+    "topics": "Ämnen:"
+  },
+  "contributions": {
+    "title": "Bidrag",
+    "description": "Här är en lista över publika arkiv ägda av andra som jag har bidragit till. För en fullständig vy av min GitHub besök ",
+    "githubLinkText": "Min GitHub",
+    "searchPlaceholder": "Sök bidrag efter namn, beskrivning eller ämne...",
+    "searchAriaLabel": "Sök bidrag efter namn, beskrivning eller ämne",
+    "showingResults": "Visar {count} av {total} bidrag",
+    "pullRequests": "Pull requests:",
+    "lines": "Rader:",
+    "linesUnit": "rader",
+    "linkToProject": "Länk till projekt",
+    "created": "Skapad:",
+    "lastUpdated": "Senast uppdaterad:",
+    "topics": "Ämnen:"
+  },
+  "education": {
+    "title": "Utbildning",
+    "graduation": "Examen:"
+  },
+  "career": {
+    "title": "Karriär",
+    "fromTo": "Från-Till:"
+  },
+  "contact": {
+    "mail": "E-post"
+  },
+  "error": {
+    "title": "Något gick fel!",
+    "tryAgain": "Försök igen"
+  },
+  "notFound": {
+    "title": "Hittades inte",
+    "message": "Kunde inte hitta den begärda resursen",
+    "returnHome": "Återvänd hem"
+  }
+}
