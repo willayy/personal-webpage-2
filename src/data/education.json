@@ -13,6 +13,12 @@
     },
     {
         "id": 3,
+        "school": "University of Tokyo (GSFS -- LISD Lab)",
+        "degree": "Special Auditing Student",
+        "graduation": "August 2026"
+    },
+    {
+        "id": 4,
         "school": "Chalmers University of Technology",
         "degree": "M.Sc. in Data Science & AI",
         "graduation": "June 2027"
