@@ -1,6 +1,7 @@
 import { Octokit } from "octokit"
 
-// Fetches github repos using access token from .env.local, this is only for a single user and not for a general search
+// Fetches github repos using access token from .env.local,
+// this is only for a single user and not for a general search
 export async function fetchMyRepos(): Promise<Repo[]> {
   try {
     const octokit = new Octokit({
@@ -262,5 +263,36 @@ export async function fetchContributedRepos(): Promise<ContributedRepo[]> {
   } catch (error) {
     console.error('Error fetching contributed repos:', error);
     return [];
+  }
+}
+
+export async function fetchLatestCvUrl(): Promise<string> {
+  try {
+    const token = process.env.ACCESS_TOKEN_GH;
+    const octokit = new Octokit({
+      auth: token,
+    });
+    const endpoint: string = 'GET /repos/{owner}/{repo}/releases/latest';
+    const response = await octokit.request(endpoint, {
+      owner: 'willayy',
+      repo: 'curriculum-vitae',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    });
+    const assets = response.data.assets;
+    const isArray = Array.isArray(assets);
+    if (!isArray) {
+      return 'https://github.com/willayy/curriculum-vitae/releases';
+    }
+    const pdfAsset = assets.find((asset) => asset.name.endsWith('.pdf'));
+    const downloadUrl = pdfAsset ? pdfAsset.browser_download_url : '';
+    const hasUrl = Boolean(downloadUrl);
+    if (!hasUrl) {
+      return 'https://github.com/willayy/curriculum-vitae/releases';
+    }
+    return downloadUrl;
+  } catch {
+    return 'https://github.com/willayy/curriculum-vitae/releases';
   }
 }

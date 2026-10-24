@@ -3,6 +3,7 @@
     "about": "Om mig",
     "projects": "Projekt",
     "contributions": "Bidrag",
+    "cv": "CV",
     "education": "Utbildning",
     "career": "Karriär",
     "contact": "Kontakt",
@@ -56,6 +57,12 @@
   "career": {
     "title": "Karriär",
     "fromTo": "Från-Till:"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "Ladda ner eller visa mitt senaste CV direkt från GitHub releases.",
+    "download": "Ladda ner CV (PDF)",
+    "viewReleases": "Visa releases på GitHub"
   },
   "contact": {
     "mail": "E-post"

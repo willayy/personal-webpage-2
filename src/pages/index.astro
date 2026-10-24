@@ -1,0 +1,67 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import skillsDataRaw from '@/data/skills.json';
+import { translateByKey } from '@/utils/localization';
+
+const introductionText: string = skillsDataRaw.introduction;
+const skillSummaryText: string = skillsDataRaw.skillSummary;
+const primarySkills: string[] = skillsDataRaw.primarySkills;
+const secondarySkills: string[] = skillsDataRaw.secondarySkills;
+
+const nameTitle = translateByKey('en', 'about.title', null);
+const skillsTitle = translateByKey('en', 'about.skillsTitle', null);
+const secondaryTitle = translateByKey('en', 'about.secondarySkillsTitle', null);
+---
+
+<Layout title={`${nameTitle} - About`}>
+  <main>
+    <div class="aboutTextbox roboto-regular">
+      <h1>{nameTitle}</h1>
+
+      <p>{introductionText}</p>
+
+      <h2>{skillsTitle}</h2>
+
+      <p>{skillSummaryText}</p>
+
+      <ul class="topicList">
+        {primarySkills.map((skill) => (
+          <li class="topic">{skill}</li>
+        ))}
+      </ul>
+
+      <h3>{secondaryTitle}</h3>
+
+      <ul class="topicList">
+        {secondarySkills.map((skill) => (
+          <li class="secondary-topic">{skill}</li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .aboutTextbox {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    .aboutTextbox {
+      margin: 15px;
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .aboutTextbox {
+      margin: 10px;
+      padding: 12px;
+    }
+  }
+</style>

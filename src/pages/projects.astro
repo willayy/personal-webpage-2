@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectsFilter from '@/components/ProjectsFilter';
+import { fetchMyRepos, Repo } from '@/api/github-api';
+import { translateByKey } from '@/utils/localization';
+
+const data: Repo[] = await fetchMyRepos();
+const defaultLink = 'https://github.com/willayy/';
+const githubUserLink = process.env.GITHUB_USER_LINK || defaultLink;
+
+const pageTitle = translateByKey('en', 'projects.title', null);
+const descriptionText = translateByKey('en', 'projects.description', null);
+const githubLinkText = translateByKey('en', 'projects.githubLinkText', null);
+---
+
+<Layout title={`${pageTitle} - William Norland`}>
+  <main>
+    <div class="listBox roboto-regular">
+      <h1>{pageTitle}</h1>
+      <p>{descriptionText}</p>
+      <a href={githubUserLink} target="_blank" rel="noopener noreferrer">
+        {githubLinkText}
+      </a>
+      <ProjectsFilter client:load data={data} githubUserLink={githubUserLink} />
+    </div>
+  </main>
+</Layout>

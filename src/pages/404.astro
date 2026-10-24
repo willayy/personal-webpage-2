@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { translateByKey } from '@/utils/localization';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const title = translateByKey('en', 'notFound.title', null);
+const message = translateByKey('en', 'notFound.message', null);
+const returnHome = translateByKey('en', 'notFound.returnHome', null);
+---
+
+<Layout title={`${title} - William Norland`}>
+  <div class="error-div roboto-regular">
+    <h2>{title}</h2>
+    <p>{message}</p>
+    <a href={`${baseUrl}/`}>{returnHome}</a>
+  </div>
+</Layout>
