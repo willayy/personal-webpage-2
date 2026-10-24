@@ -1,40 +1,33 @@
-'use client' // Error boundaries must be Client Components
- 
-import { useEffect } from 'react'
- 
-export default function Error({ // NOSONAR - This is the way its defined in the Next.js documentation
+'use client';
+
+import { useEffect } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
+
+export default function Error({
   error,
   reset,
 }: Readonly<{
-  error: Error & { digest?: string }
-  reset?: () => void
+  error: Error & { digest?: string };
+  reset?: () => void;
 }>) {
+  const { t } = useTranslation();
+  const errorTitle = t('error.title', null);
+  const tryAgainText = t('error.tryAgain', null);
+
   useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
- 
+    console.error(error);
+  }, [error]);
+
   return (
+    <div className="error-div roboto-regular">
+      <h2>{errorTitle}</h2>
 
-    <div className ="error-div roboto-regular">
-
-      <h2>Something went wrong!</h2>
-
-      <button className="error-button roboto-regular"
-        onClick={
-
-          // Attempt to recover by trying to re-render the segment
-          () => reset?.()
-
-        }
+      <button
+        className="error-button roboto-regular"
+        onClick={() => reset?.()}
       >
-
-        Try again
-
+        {tryAgainText}
       </button>
-
     </div>
-
-  )
-
+  );
 }
